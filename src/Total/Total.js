@@ -5,7 +5,7 @@ export default function Total(props){
 
     return(
         <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
+                {props.USCurrencyFormat.format(props.total)}
               </div>
       )
 

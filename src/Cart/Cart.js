@@ -1,35 +1,23 @@
 import React from 'react';
-import Price from './Price/Price'
+import FormatCurrency from '../FormatCurrency/FormatCurrency'
+
+import Summary from './Summary/Summary'
 
 
-export default class Cart extends React.Component{
-    constructor(...props){
-        super(...props);
-    }
+export default function Cart(props){
 
-    const total = Object.keys(this.state.selected).reduce(
-        (acc, curr) => acc + this.state.selected[curr].cost,
-        0
-      );
-    return (
-        <fieldset className="feature" key={featureHash}>
-          <legend className="feature__name">
-            <h3>{feature}</h3>
-          </legend>
-          {options}
-        </fieldset>
-    render(){
-return(
-    
-    <section className="main__summary">
+
+return (
+  <section className="main__summary">
             <h2>Your cart</h2>
-            {props.summary}
+            <Summary />
             <div className="summary__total">
-              <div className="summary__total__label">
-                  <Price />
+              <div className="summary__total__label">Total</div>
+              <div className="summary__total__value">
+                <FormatCurrency total={100} />
               </div>
-              
             </div>
           </section>
-)}
+)
+
 }

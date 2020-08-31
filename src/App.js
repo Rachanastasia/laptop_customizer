@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from  'react';
 import Header from './Header/Header';
-import List from './List/List';
+import Features from './Features/Features';
 import Cart from './Cart/Cart';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-import slugify from 'slugify';
+
 
 import './App.css';
 
-// MOVED INTO OWN FOLDER
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
 
-class App extends Component {
-  state = {
+class App extends React.Component {
+state = {
     selected: {
       Processor: {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
@@ -35,7 +30,10 @@ class App extends Component {
         cost: 1500
       }
     }
-  };
+  }
+  
+
+  
 
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
@@ -43,17 +41,26 @@ class App extends Component {
     this.setState({
       selected
     });
-  };
+  }
 
-    return (
+
+  render(){
+    // console.log(this.store.selected);
+    // console.log(this);
+     return (
       <div className="App">
         <Header />
         <main>
-          <List />
-          <Cart />
+          <Features features= {this.props.features} selected={this.store.selected} update={this.updateFeature}/>
+          <Cart selected={this.state.selected} />
         </main>
       </div>
-    )
-}
+    );
+     }
+
+
+
+
+};
 
 export default App;
