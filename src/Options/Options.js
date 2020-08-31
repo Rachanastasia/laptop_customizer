@@ -2,14 +2,14 @@
 import React from 'react';
 
 import slugify from 'slugify';
-import FormatCurrency from '../FormatCurrency/FormatCurrency';
+import FormatCurrency from '../FormatCurrency/FormatCurrency'
 
 
 
 
 export default function Options(props) {
 
-  
+
 
    const feature = props.features;
    const name = props.name;
@@ -19,8 +19,9 @@ export default function Options(props) {
 
    const options = arr.map(item => {
       const itemHash = slugify(JSON.stringify(item));
-      
-    
+
+      console.log(item.cost);
+     
       return (
          <div key={itemHash} className="feature__item">
             <input
@@ -33,7 +34,7 @@ export default function Options(props) {
             />
             <label htmlFor={itemHash} className="feature__label">
                {item.name}
-               <FormatCurrency price={item.price} />
+               <div><FormatCurrency cost={item.cost} /></div>
             </label>
          </div>
       );

@@ -5,11 +5,10 @@ import Options from '../Options/Options'
 
 
 export default function Features(props){
-   const featureProps ={...props.features}
-   console.log(featureProps)
+  
     const newFeatures = Object.keys({...props.features}).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        console.log(props.selected)
+        
     const name = feature;
 
         return (

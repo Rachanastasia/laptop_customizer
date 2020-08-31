@@ -1,7 +1,7 @@
 import React, { Component } from  'react';
 import Header from './Header/Header';
 import Features from './Features/Features';
-// import Cart from './Cart/Cart';
+import Cart from './Cart/Cart';
 
 
 import './App.css';
@@ -48,30 +48,15 @@ this.state = {
 
   render(props){
 
-
-  console.log(this.props.store);
-  console.log(this.state.selected)
-
     return (
       <div>
         <Header />
         <main>
           <Features features= {this.props.store} selected={this.state.selected} update={this.updateFeature}/>
-    
+          <Cart selected={this.state.selected}/>
         </main>
       </div>
     )
-
-    //  return (
-
-    //   <div className="App">
-    //     <Header />
-    //     <main>
-    //       <Features features= {this.store} selected={this.state.selected} update={this.updateFeature}/>
-    //       <Cart selected={this.state.selected} />
-    //     </main>
-    //   </div>
-    // );
      }
 
 
