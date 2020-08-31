@@ -1,13 +1,18 @@
 import React from 'react';
+import FormatCurrency from '../../FormatCurrency/FormatCurrency';
 
+import './Total.css'
 
 export default function Total(props){
-
+ console.log(props.selected)
+  const total = Object.keys(props.selected).reduce(
+        (acc, curr) => acc + props.selected[curr].cost,
+        0
+      );
+      console.log(total);
     return(
-        <div className="summary__total__value">
-                {props.USCurrencyFormat.format(props.total)}
-              </div>
-      )
+      <FormatCurrency cost={total}/>
+    )
 
 
     

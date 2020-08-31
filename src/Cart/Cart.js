@@ -1,7 +1,8 @@
 import React from 'react';
 // import FormatCurrency from '../FormatCurrency/FormatCurrency'
 
-import Summary from './Summary/Summary'
+import Summary from './Summary/Summary';
+import Total from './Total/Total';
 
 
 export default function Cart(props){
@@ -14,7 +15,7 @@ return (
             <div className="summary__total">
               <div className="summary__total__label">Total</div>
               <div className="summary__total__value">
-                $100.00
+                <Total selected={props.selected}/>
               </div>
             </div>
           </section>

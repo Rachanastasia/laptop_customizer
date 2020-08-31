@@ -2,6 +2,8 @@
 import React from 'react';
 import Options from '../Options/Options'
 
+import './Features.css'
+
 
 
 export default function Features(props){

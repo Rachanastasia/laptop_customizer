@@ -13,50 +13,16 @@ body {
   margin: 0;
 }
 
-header {
-  background-color: #252525d2;
-  color: #fff;
-  padding: 2rem;
-}
-
-header > h1,
 main {
   width: 95%;
   max-width: 120rem;
   margin: 0 auto;
-}
-
-legend > h3 {
-  margin: 0;
-}
-
-main {
-  width: 95%;
-  max-width: 120rem;
   display: flex;
-  flex-direction: row;
-  margin: 0 auto;
+flex-direction: row;
 }
 
-.main__form {
-  flex: 4;
-}
 
-.feature {
-  padding: 0.8rem;
-  padding-top: 0.4rem;
-  border: 0;
-}
 
-.feature + .feature {
-  margin-top: 0.8rem;
-}
-
-.feature__name {
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: bold;
-}
 
 .feature__item + .feature__item {
   margin-top: 0.8rem;

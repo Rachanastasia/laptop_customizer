@@ -4,7 +4,7 @@ import React from 'react';
 import slugify from 'slugify';
 import FormatCurrency from '../FormatCurrency/FormatCurrency'
 
-
+import './Options.css'
 
 
 export default function Options(props) {
@@ -20,7 +20,6 @@ export default function Options(props) {
    const options = arr.map(item => {
       const itemHash = slugify(JSON.stringify(item));
 
-      console.log(item.cost);
      
       return (
          <div key={itemHash} className="feature__item">
