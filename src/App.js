@@ -1,17 +1,19 @@
-import React from  'react';
+import React, { Component } from  'react';
 import Header from './Header/Header';
 import Features from './Features/Features';
-import Cart from './Cart/Cart';
-
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
+// import Cart from './Cart/Cart';
 
 
 import './App.css';
 
 
-class App extends React.Component {
-state = {
+class App extends Component {
+
+constructor(props){
+
+super(props);
+
+this.state = {
     selected: {
       Processor: {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
@@ -31,9 +33,9 @@ state = {
       }
     }
   }
-  
+}
 
-  
+
 
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
@@ -41,25 +43,39 @@ state = {
     this.setState({
       selected
     });
-  }
+  };
 
 
-  render(){
-    // console.log(this.store.selected);
-    // console.log(this);
-     return (
-      <div className="App">
+  render(props){
+
+
+  console.log(this.props.store);
+  console.log(this.state.selected)
+
+    return (
+      <div>
         <Header />
         <main>
-          <Features features= {this.props.features} selected={this.store.selected} update={this.updateFeature}/>
-          <Cart selected={this.state.selected} />
+          <Features features= {this.props.store} selected={this.state.selected} update={this.updateFeature}/>
+    
         </main>
       </div>
-    );
+    )
+
+    //  return (
+
+    //   <div className="App">
+    //     <Header />
+    //     <main>
+    //       <Features features= {this.store} selected={this.state.selected} update={this.updateFeature}/>
+    //       <Cart selected={this.state.selected} />
+    //     </main>
+    //   </div>
+    // );
      }
 
 
-
+    
 
 };
 
