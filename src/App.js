@@ -1,6 +1,6 @@
 import React, { Component } from  'react';
 import Header from './Header/Header';
-import Features from './Features/Features';
+import MainForm from './MainForm/MainForm';
 import Cart from './Cart/Cart';
 
 
@@ -52,7 +52,7 @@ this.state = {
       <div>
         <Header />
         <main>
-          <Features features= {this.props.store} selected={this.state.selected} update={this.updateFeature}/>
+          <MainForm features= {this.props.store} selected={this.state.selected} update={this.updateFeature}/>
           <Cart selected={this.state.selected}/>
         </main>
       </div>

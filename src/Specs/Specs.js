@@ -2,16 +2,15 @@
 import React from 'react';
 import Options from '../Options/Options'
 
-import './Features.css'
+import './Specs.css'
 
 
 
-export default function Features(props){
+export default function Specs(props){
   
-    const newFeatures = Object.keys({...props.features}).map((feature, idx) => {
+    return Object.keys({...props.features}).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        
-    const name = feature;
+  
 
         return (
           <fieldset className="feature" key={featureHash}>
@@ -20,22 +19,13 @@ export default function Features(props){
             </legend>
              <Options 
                 features= {props.features}
-                name={name}
+                name={feature}
                 selected={props.selected}
                 update={props.update}
             />
           </fieldset>
         );
    });
-
-
-return(
-
-<form className="main__form">
-            <h2>Customize your laptop</h2>
-            {newFeatures}
-          </form>
-)
-
+  
 
 }
